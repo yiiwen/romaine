@@ -1,0 +1,54 @@
+nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#main-nav-collapse")
+          span.sr-only
+            |Toggle Navigation
+          i.fa.fa-bars
+        a.navbar-brand(href="index.html")
+          img(src="/images/logo/bravana-lite-logo.png" alt="Bravana Logo")
+        #main-nav-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav.main-navbar-nav
+            li.dropdown.active
+              a.dropdown-toggle(href="#" data-toggle="dropdown")
+                |HOME
+                i.fa.fa-angle-down
+              ul.dropdown-menu(role="menu")
+                li.active
+                  a(href="/index")
+                    |Home Default
+                li
+                  a(href="/homeblog")
+                    |Home Blog
+            li.dropdown
+              a.dropdown-toggle(href="#" data-toggle="dropdown")
+                |FEATURES
+                i.fa.fa-angle-down
+              ul.dropdown-menu(role="menu")
+                li.active
+                  a(href="index.html")
+                    |Fullscreen Image Background
+                li
+                  a(href="index-blog.html")
+                    |Footer Newsletter (Dark)
+            li.dropdown
+              a.dropdown-toggle(href="#" data-toggle="dropdown")
+                |PAGES
+                i.fa.fa-angle-down
+              ul.dropdown-menu(role="menu")
+                li.active
+                  a(href="index.html")
+                    |About
+                li
+                  a(href="index-blog.html")
+                    |Services
+                li
+                  a(href="index-blog.html")
+                    |Contact
+            li
+              a(href="blog-single-post.html")
+                |BLOG POST
+            li
+              a.btn-navbar(href="#downloads/bravana-responsive-website-template/?utm_source=bravanalite&utm_medium=button&utm_campaign=bravana" target="_blank")
+                span
+                  i.fa.fa-rocket
+                    |UPGRADE TO PRO
