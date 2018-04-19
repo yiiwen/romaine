@@ -7,15 +7,15 @@ block content
       .hero-content
         .container
           h2.heading
-            |Multipurpose Bootstrap Theme
+            |油麦菜信息科技有限公司
           p.lead
-            |Made
+            //- |Made
             span#rotating-words.rotating-words
-              |with love &amp; passion, for your next project, to save your time
+              |创造爱与 &amp; 激情, 创造你的下一个项目, 节省你宝贵的时间
           a.btn.btn-primary.btn-lg(href="#")
-            |PURCHASE
+            |联系我们
           a.btn.btn-default.btn-lg(href="#")
-            |LEARN MORE
+            |了解更多
     section.no-padding-bottom
       .container
         .row.icon-info-group
@@ -26,9 +26,9 @@ block content
                 |Free Support
               p
                 |Dynamically productivate reliable action items without an expanded array.
-              a.more(href="#")
-                |Support Info
-              i.fa.fa-angle-right
+              //- a.more(href="#")
+              //-   |Support Info
+              //- i.fa.fa-angle-right
           .col-md-4
             .icon-info.icon-info-center
               i.icon.icon_cloud-download_alt.ico-styled-md
@@ -36,9 +36,9 @@ block content
                 |Free Future Updates
               p
                 |Dynamically productivate reliable action items without an expanded array.
-              a.more(href="#")
-                |Getting an Update
-              i.fa.fa-angle-right
+              //- a.more(href="#")
+              //-   |Getting an Update
+              //- i.fa.fa-angle-right
           .col-md-4
             .icon-info.icon-info-center
               i.icon.icon_question_alt2.ico-styled-md
@@ -46,31 +46,31 @@ block content
                 |Free Support
               p
                 |Dynamically productivate reliable action items without an expanded array.
-              a.more(href="#")
-                |Ask a Question
-              i.fa.fa-angle-right
+              //- a.more(href="#")
+              //-   |Ask a Question
+              //- i.fa.fa-angle-right
     section
       .container
-        h2.section-heading
-          |Background Story
-        p
-          |Completely embrace transparent methods of empowerment before prospective partnerships. Holisticly
-          |pontificate user-centric action items rather than worldwide supply chains. Dynamically reintermediate
-          |backend core competencies whereas quality interfaces. Monotonectally engage unique internal or "organic" 
-          |sources rather than virtual expertise. Uniquely develop parallel e-business with 24/7 relationships. Phosfluorescently 
-          |synthesize innovative web services rather than cooperative.
-        p
-          |Proactively exploit focused paradigms rather than technically sound solutions. Professionally
-          | recaptiualize emerging methods of empowerment with proactive bandwidth. Dramatically 
-          | supply professional strategic theme.
-    .copyrights
-      |Collect from
-      a(href="http://www.cssmoban.com/")
-        |企业网站模板
+        .row
+          each table in pricing
+            .col-md-4.col-sm-6.pricing-table.pricing-recommended
+              .top
+                h3.heading
+                  |#{table.title}
+              .bottom
+                ul.list-unstyled.list-details
+                  each items in table.list
+                    li
+                      a(href="#{items.link}")
+                        |#{items.title}
+                a.btn.btn-primary(href="#{table.button.btnLink}")
+                  |#{table.button.title}
     section
       .container
-        h2.section-heading
-          |What We Do
+        h2.txtcenter.section-heading
+          |#{midTitle.title}
+          p.intro
+            |#{midTitle.detail}
         .row
           .col-md-4
             .icon-info.icon-info-left
@@ -126,91 +126,6 @@ block content
                 p
                   |Holisticly harness just in time technologies via corporate scenarios. Intrinsicly 
                   |predominate ubiquitous outsourcing through an expanded array of functionalities.
-    section
-      .container
-        h2.section-heading
-          |Pricing
-        .row
-          .col-md-3.col-sm-6.pricing-table
-            .top
-              h3.heading
-                |Basic
-              p.pricing
-                |$25/mo
-            .bottom
-              ul.list-unstyled.list-details
-                li
-                  |5 GB upload quota
-                li
-                  |10 GB file storage
-                li
-                  |Up to 2 Mbps download speed
-                li
-                  |Unlimited bandwidth
-                li
-                  |Professional support
-              a.btn.btn-default(href="#")
-                |SUBSCRIBE
-          .col-md-3.col-sm-6.pricing-table.pricing-recommended
-            .top
-              h3.heading
-                |Premium
-              p.pricing
-                |$49/mo
-            .bottom
-              ul.list-unstyled.list-details
-                li
-                  |5 GB upload quota
-                li
-                  |10 GB file storage
-                li
-                  |Up to 2 Mbps download speed
-                li
-                  |Unlimited bandwidth
-                li
-                  |Professional support
-              a.btn.btn-primary(href="#")
-                |SUBSCRIBE
-          .col-md-3.col-sm-6.pricing-table
-            .top
-              h3.heading
-                |Pro
-              p.pricing
-                |$99/mo
-            .bottom
-              ul.list-unstyled.list-details
-                li
-                  |5 GB upload quota
-                li
-                  |10 GB file storage
-                li
-                  |Up to 2 Mbps download speed
-                li
-                  |Unlimited bandwidth
-                li
-                  |Professional support
-              a.btn.btn-default(href="#")
-                |SUBSCRIBE
-          .col-md-3.col-sm-6.pricing-table
-            .top
-              h3.heading
-                |Ultimate
-              p.pricing
-                |$150/mo
-            .bottom
-              ul.list-unstyled.list-details
-                li
-                  |5 GB upload quota
-                li
-                  |10 GB file storage
-                li
-                  |Up to 2 Mbps download speed
-                li
-                  |Unlimited bandwidth
-                li
-                  |Professional support
-              a.btn.btn-default(href="#")
-                |SUBSCRIBE
     section
       .container
         h2.sr-only
