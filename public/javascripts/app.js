@@ -1,27 +1,26 @@
-window.onload = function(){
-    var newBtns = document.getElementsByClassName('newBtn');
-    for(var i=0;i<newBtns.length;i++) {
-        newBtns.item(i).onclick=function(){
-            var className = '';
-            for (var j=0;j<newBtns.length;j++) {
-                className = newBtns.item(j).className;
-                newBtns.item(j).className = className.replace(/active/,'');
-            }
-            this.className = this.className + ' active';
-            //标签页切换
-            var move = setInterval(function(){
-                var ele = document.getElementsByClassName("table-page")[0].firstElementChild;
-                if (!ele.style.left) {
-                    ele.style.left = -1 +"px";
-                } else {
-                    var left = ele.style.left;
-                    left = left.substring(0,left.length -2);
-                    left = parseInt(left) - 1;
-                    ele.style.left = left +"px";
+$(document).ready(function(){
+    $('.newBtn').click(function(){
+        $(".newBtn").removeClass("active");
+        $(this).addClass("active");
+        var width = $(".table-page").css("width");
+        width = parseInt(width.substring(0,width.length -2)) -2;
+        var time = setInterval(function(){
+            $(".tab").each(function(){
+                var left = $(this).css("left");
+                left = parseInt(left.substring(0,left.length-2));
+                left--;
+                if (Math.abs(left) % width == 0){
+                    clearInterval(time);
+                    //将第一个转到最后
+                    var length = $(".tab").length;
+                    $(".table-page .active").css('left',(length-1) * (width-2) +"px");
+                    if ($(this).css('left') == '1px'){
+                        $(this).removeClass("active");
+                        $(this).addClass('active');
+                    }
                 }
-            },10);
-        }
-    }
-
-
-}
+                $(this).css('left',left +'px');
+            });
+        },10);
+    });
+});
