@@ -60,7 +60,7 @@ var handle = function(req,res,next){
           btnLink:'javascript:void(0)'
         }
       },{
-        title : '高端网站建设',
+        title : '移动应用设计与开发',
         list:[
           {
             title:'APP设计与开发',
