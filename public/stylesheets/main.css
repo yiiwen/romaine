@@ -7035,3 +7035,34 @@ footer .right {
   background: #f7f7f7;
 }
 
+.right-nav{
+  position: fixed;
+  right:0;
+  top:40%;
+}
+
+.icon {
+  width: 1.5em; height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.right-nav ul{
+  margin:0;
+  padding:0;
+}
+
+.right-nav li{
+  margin:0;
+  padding:0;
+  list-style: none;
+  margin:4px;
+  width:50px;
+  height:50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  background: #69b417;
+  color: #FFF;
+}
