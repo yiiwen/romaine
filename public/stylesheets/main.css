@@ -6883,6 +6883,7 @@ footer .right {
 
 .figure-show .number-abs{
   text-align: center;
+  display: none;
 }
 
 .news .intro a{
@@ -7069,6 +7070,12 @@ footer .right {
 
 .right-nav li a{
   color: #FFF;
+}
+
+@media screen and (max-width: 990px) {
+  .right-nav{
+    display: none;
+  }
 }
 
 #code{
