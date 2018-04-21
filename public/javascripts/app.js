@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
     //新闻模块
-    initNewTab();
-    newTabSwitch();
+    if ($(".table-page").length > 0) {
+        initNewTab();
+        newTabSwitch();
+    }
     showScroll();
-
-
 
     //返回顶部按钮事件
     $('#top').click(function(){
