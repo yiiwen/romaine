@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    #wrapper
+        include nav
+        #page-header-services.page-header.has-background-image
+            .overlay
+            .container
+                h1.page-title
+                    |行业动态
+                ol.breadcrumb.link-accent
+                    li
+                        a(href="")
+                            |首页
+                    li
+                        a(href="")
+                            |行业动态
+        .page-content.no-margin-bottom
+            section
+                .container
+                    h2.section-heading.center
+                        |行业新动态
+                    p.intro.center
+                        |一切以客户的利益为出发点
+                    p.intro.center
+                        a.newBtn.active(href="javascript:void(0)")
+                            |行业研究
+                        a.newBtn(href="javascript:void(0)")
+                            |公司动态
+        include footer

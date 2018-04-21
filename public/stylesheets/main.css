@@ -6507,15 +6507,15 @@ html, body {
 }
 
 #page-header-about {
-  background-image: url('../img/page-header-default-bg.jpg?1461296838');
+  background-image: url('../images/page-header-default-bg.jpg?1461296838');
 }
 
 #page-header-services {
-  background-image: url('../img/page-header-services-bg.jpg?1461311670');
+  background-image: url('../images/page-header-services-bg.jpg?1461311670');
 }
 
 #page-header-contact {
-  background-image: url('../img/page-header-contact-bg.jpg?1461312274');
+  background-image: url('../images/page-header-contact-bg.jpg?1461312274');
 }
 
 /* ------------
@@ -7113,4 +7113,38 @@ footer .right {
 
 #phone:hover .phone{
   display: block;
+}
+.center{
+  text-align: center;
+}
+
+.intro .newBtn{
+  display: inline-block;
+  padding: 2px 8px;
+  margin-left: 8px;
+  border: 1px solid #bfbfbf;
+  color: #bfbfbf;
+}
+
+.intro .active{
+  background: #69b417;
+  color:#FFF;
+  border: 1px solid #69b417;
+}
+
+.title{
+  font-size: 3em;
+  color:#69b417;
+}
+
+.back {
+  padding: 4px 6px;
+  border: 1px solid #69b417;
+  display: inline-block;
+  margin-top: 3em;
+}
+
+.back:hover{
+  background: #69b417;
+  color:#FFF;
 }
