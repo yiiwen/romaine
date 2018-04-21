@@ -435,18 +435,23 @@ block content
               img(src="images/clients/20170829174420692.jpg" alt="logo")
     .right-nav
       ul
-        li
+        li#code
           svg.icon(aria-hidden="true")
             use(xlink:href="#icon-weixin")
+          .code
+            img(src="/images/code.jpg")
         li
-          svg.icon(aria-hidden="true")
-            use(xlink:href="#icon-qq")
-        li
+          a(href="http://wpa.qq.com/msgrd?v=3&uin=2958191200&site=qq&menu=yes" target="_blank")
+            svg.icon(aria-hidden="true")
+              use(xlink:href="#icon-qq")
+        li#phone
           svg.icon(aria-hidden="true")
             use(xlink:href="#icon-dianhua")
+          .phone
+            |158-1884-8247
         li
           svg.icon(aria-hidden="true")
             use(xlink:href="#icon-haoyouliebiao")
-        li
+        li#top
           |TOP
     include footer

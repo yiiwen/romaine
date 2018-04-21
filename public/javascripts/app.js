@@ -3,6 +3,15 @@ $(document).ready(function(){
     //新闻模块
     initNewTab();
     newTabSwitch();
+    showScroll();
+
+
+
+    //返回顶部按钮事件
+    $('#top').click(function(){
+        $("html,body").animate({scrollTop:0},300);
+    });
+
 });
 
 //新闻标签页初始化
@@ -15,6 +24,17 @@ function initNewTab() {
     $(".tab-content").css("height",height);
     $(".tab").css('width',width).css("height",height);
 }
+
+//返回顶部代码
+function showScroll(){
+    var scrollValue=$(window).scrollTop();
+    scrollValue > 200 ? $('#top').fadeIn():$('#top').fadeOut();
+    $(window).scroll( function() { 
+        var scrollValue=$(window).scrollTop();
+        scrollValue > 200 ? $('#top').fadeIn():$('#top').fadeOut();
+    } );
+}
+
 //新闻标签页切换
 function newTabSwitch() {
 

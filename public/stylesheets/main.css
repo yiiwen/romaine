@@ -7066,3 +7066,44 @@ footer .right {
   background: #69b417;
   color: #FFF;
 }
+
+.right-nav li a{
+  color: #FFF;
+}
+
+#code{
+  position: relative;
+}
+.code{
+  position: absolute;
+  left:-158px;
+  top:0;
+  display: none;
+}
+
+.code img{
+  width: 150px;
+  border:1px solid #CCC;
+}
+
+#code:hover .code{
+  display: block;
+}
+
+.phone{
+  background: #69b417;
+  position: absolute;
+  padding:0 8px;
+  left:-128px;
+  top: 0;
+  overflow: hidden;
+  display: none;
+}
+
+#phone{
+  position: relative;
+}
+
+#phone:hover .phone{
+  display: block;
+}
