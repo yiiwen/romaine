@@ -12,8 +12,14 @@ $(document).ready(function(){
         $("html,body").animate({scrollTop:0},300);
     });
 
+    //注册首页滚动数字事件
     scrollNum();
-
+    //注册新闻页的按钮切换事件
+    switchActive()
+    //注册生成分页按钮
+    if($(".pagelist").length > 0) {
+        initPageList();
+    }
 });
 
 //数字滚动
@@ -58,9 +64,6 @@ function scrollNum(){
             clearInterval(time);
         }
     },50);
-
-    
-    
 }
 
 //新闻标签页初始化
@@ -131,4 +134,46 @@ function newTabSwitch() {
             },5);
         }
     });
+}
+
+//新闻页的按钮切换
+function switchActive(){
+    $(".news .newBtn").click(function(){
+        $(".news .newBtn").removeClass("active");
+        $(this).addClass("active");
+    });
+}
+
+
+var initPageList = function(){
+    const totalPage = $(".pagelist").attr("totalpage");
+    const currentPage = $(".pagelist").attr("currentpage");
+    const prevUrl = $(".pagelist").attr("prevurl");
+    var html = '';
+    //生成首页和上一页按钮
+    if (currentPage == 1) {
+        html +=`<span>首页</span>`;
+        html +=`<span>上一页</span>`;
+    } else {
+        html += `<a href="${prevUrl}1">首页</span>`;
+        html += `<a href="${prevUrl}${currentPage - 1}">上一页</a>`;
+    }
+    //生成中间数字按钮
+    for (var i=1;i<=totalPage;i++){
+        if (currentPage == i) {
+            html +=`<a class="active" href="${prevUrl}${i}">${i}</a>`;
+        } else {
+            html +=`<a href="${prevUrl}${i}">${i}</a>`;
+        }
+    }
+    //生成下一页和尾页按钮
+    if (totalPage == currentPage) {
+        html += `<span>下一页</span>`;
+        html += `<span>尾页</span>`;
+    } else {
+        html += `<a href="${prevUrl}${currentPage*1+1}">下一页</span>`;
+        html += `<a href="${prevUrl}${totalPage}">尾页</a>`;
+    }
+    $(".pagelist").append(html);
+    console.log($(".pagelist").width());
 }
