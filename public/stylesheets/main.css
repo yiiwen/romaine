@@ -5074,7 +5074,7 @@ div[class*="col-"] .icon-info-center {
   background-color: #F8F8F8;
 }
 .team-member .member-info {
-  padding: 25px 20px;
+  padding: 25px 12px;
   border-top: 2px solid #69B417;
 }
 .team-member .name {
@@ -7107,6 +7107,11 @@ footer .right {
   display: none;
 }
 
+.phone2{
+  left:-128px;
+  top: 54px;
+}
+
 #phone{
   position: relative;
 }
@@ -7233,4 +7238,16 @@ footer .right {
   border-bottom:1px solid #a79f9f;
   margin-bottom: 12px;
   padding-bottom:6px;
+}
+
+.logos ul,li{
+  margin:0;
+  padding:0;
+}
+
+.logos li{
+  list-style: none;
+  float: left;
+  margin-left: 8px;
+  margin-top: 8px;
 }

@@ -7,9 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var newsRouter = require('./routes/news');
+var infoRouter = require('./routes/info');
 
 var app = express();
-app.locals.title = 'hello world';
+app.locals.title = '油麦菜信息科技有限公司';
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/news',newsRouter);
+app.use('/info',infoRouter);
 
 app.use(function(req, res, next) {
   res.render("404",{title:"广州油麦菜信息科技有限公司"});
