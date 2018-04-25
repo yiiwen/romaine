@@ -1,0 +1,69 @@
+extends layout
+block content
+    #wrapper
+        include nav
+        #page-header-contact.page-header.has-background-image
+            .overlay
+            .container
+                h1.page-title
+                    |关于我们
+                ol.breadcrumb.link-accent
+                    li
+                        a(href="")
+                            |首页
+                    li
+                        a(href="")
+                            |关于我们
+        .page-content.no-margin-bottom
+            .container
+                .row
+                    .col-md-9
+                        p
+                            |Phosfluorescently转换渐进交付物，而电子商务技术。独特的目标是积极的
+                            |人力资本，而不是面向未来的全面联系。合作主导有影响力的合作关系和无处
+                            |不在的社区。专业制定相互依赖的外包，而不是仅仅在时间上紧迫。独一无二
+                            |地协调质量，全面链接而不会有可靠的结果。
+                        br
+                        form#contact-form.form-horizontal(method='post')
+                            .row
+                                .col-sm-6
+                                    .form-group
+                                        label.control-label.sr-only(for='contact-name')
+                                            |姓名
+                                        input#contact-name.form-control(type='text', name='name', placeholder='姓名*', required='')
+                                .col-sm-6
+                                    .form-group
+                                        label.control-label.sr-only(for='contact-email') 邮箱
+                                        input#contact-email.form-control(type='email', name='email', placeholder='邮箱*', required='')
+                            .form-group
+                                label.control-label.sr-only(for='contact-subject') 主题
+                                .col-sm-12
+                                    input#contact-subject.form-control(type='text', name='subject', placeholder='主题')
+                            .form-group
+                                label.control-label.sr-only(for='contact-message') 内容
+                                .col-sm-12
+                                    textarea#contact-message.form-control(name='message', rows='5', cols='30', placeholder='内容', required='')
+                            .form-group
+                                .col-sm-12
+                                    button#submit-button.btn.btn-primary(type='submit')
+                                        i.fa.loading-icon
+                                        span 发送消息
+                            input#msg-submitted(type='hidden', name='msg-submitted', value='true')
+                    .col-md-3
+                        .sidebar
+                            .widget
+                                h4.widget-title 联系方式
+                                address.contact-info
+                                    p
+                                        i.icon.icon_pin_alt.ico-styled.text-primary
+                                        |1234 North Main Street New York, NY 22222
+                                    p
+                                        i.icon.icon_phone.ico-styled.text-primary
+                                        |(1800) 765 - 4321
+                                    p
+                                        i.icon.icon_mail_alt.ico-styled.text-primary
+                                        |email@yourdomain.com
+                #allmap
+                        
+
+        include footer

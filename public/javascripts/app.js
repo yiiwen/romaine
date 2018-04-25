@@ -20,6 +20,9 @@ $(document).ready(function(){
     if($(".pagelist").length > 0) {
         initPageList();
     }
+    if ($("#allmap").length > 0) {
+        initMap();
+    }
 });
 
 //数字滚动
@@ -176,4 +179,19 @@ var initPageList = function(){
     }
     $(".pagelist").append(html);
     console.log($(".pagelist").width());
+}
+
+var initMap = function() {
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(116.331398,39.897445);
+    map.centerAndZoom(point,12);
+    var myGeo = new BMap.Geocoder();
+    myGeo.getPoint("北京市海淀区上地10街", function(point){
+        if (point) {
+            map.centerAndZoom(point, 16);
+            map.addOverlay(new BMap.Marker(point));
+        }else{
+            alert("您选择地址没有解析到结果!");
+        }
+    }, "北京市");
 }
