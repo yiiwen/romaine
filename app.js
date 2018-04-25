@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var newsRouter = require('./routes/news');
 var infoRouter = require('./routes/info');
+var caseRouter = require('./routes/cases');
 
 var app = express();
 app.locals.title = '油麦菜信息科技有限公司';
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/news',newsRouter);
 app.use('/info',infoRouter);
+app.use('/cases',caseRouter);
 
 app.use(function(req, res, next) {
   res.render("404",{title:"广州油麦菜信息科技有限公司"});
