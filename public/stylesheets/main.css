@@ -7168,7 +7168,6 @@ footer .right {
 .new-content{
   border:1px solid #f9f6f6;
   cursor: pointer;
-  padding: 0 6px;
 }
 
 .new-image img{
@@ -7307,14 +7306,15 @@ footer .right {
   color:#FFF;
 }
 
-.new-content:hover{
+.news-index-block{
+  padding:0 6px;
+}
+
+.news-index-block:hover{
   background: #69b417;
 }
 
-.new-content:hover a{
+.news-index-block:hover a{
   color:#FFF;
 }
 
-.new-content:hover +.date {
-  background: #69b417;
-}

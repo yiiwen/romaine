@@ -5,14 +5,48 @@ block content
         .container
             img.logo(src="/images/logo.png")
             .row
-                .login-form.col-md-3.col-md-offset-4
-                    form.form-horizontal
+                .login-form.col-md-4.col-md-offset-4
+                    form.form-horizontal(action="/" onsubmit="return check()" method="post")
                         .form-group
-                            .col-sm-12
+                            .col-sm-10.col-sm-offset-1
                                 input#username.form-control(type='text', placeholder='用户名')
                         .form-group
-                            .col-sm-12
+                            .col-sm-10.col-sm-offset-1
                                 input#password.form-control(type='password', placeholder='密码')
                         .form-group
-                            .col-sm-12
-                                button.btn.btn-success.login-btn(type='button') 登陆
+                            .col-sm-10.col-sm-offset-1
+                                button.btn.btn-success.login-btn(type='submit') 登陆
+
+
+        .modal#login-form-alert.fade(tabindex='-1', role='dialog')
+            .modal-dialog.modal-sm(role='document')
+                .modal-content
+                    .modal-header(style={'background':'#ff7171','color':'#FFF',
+                    'border-top-left-radius':'4px','border-top-right-radius':'4px'})
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') &times;
+                        h4.modal-title 
+                            |请填写正确的用户信息
+                    .modal-body
+                        p#alert-content
+        script.
+            function check(){
+                const username = $('#username').val().trim();
+                const password = $('#password').val().trim();
+                if (username == '') {
+                    $('#alert-content').text("用户名不能为空");
+                    $("#login-form-alert").modal('toggle');
+                    $("#username").focus();
+                    return false;
+                }
+                if (password == '') {
+                    $('#alert-content').text("密码不能为空");
+                    $("#login-form-alert").modal('toggle');
+                    return false;
+                }
+                if (password.length < 6) {
+                    $('#alert-content').text("密码长度不能小于6位数");
+                    $("#login-form-alert").modal('toggle');
+                    return false;
+                }
+            }
