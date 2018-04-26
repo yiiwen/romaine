@@ -10,6 +10,9 @@ var newsRouter = require('./routes/news');
 var infoRouter = require('./routes/info');
 var caseRouter = require('./routes/cases');
 
+/////////////////////后台模块/////////////
+var backendRouter = require('./routes/backend/app');
+
 var app = express();
 app.locals.title = '油麦菜信息科技有限公司';
 // view engine setup
@@ -27,6 +30,9 @@ app.use('/users', usersRouter);
 app.use('/news',newsRouter);
 app.use('/info',infoRouter);
 app.use('/cases',caseRouter);
+
+//后台模块
+app.use('/backend',backendRouter);
 
 app.use(function(req, res, next) {
   res.render("404",{title:"广州油麦菜信息科技有限公司"});

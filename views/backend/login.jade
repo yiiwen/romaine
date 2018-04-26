@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    body.login-page
+        .container
+            img.logo(src="/images/logo.png")
+            .row
+                .login-form.col-md-3.col-md-offset-4
+                    form.form-horizontal
+                        .form-group
+                            .col-sm-12
+                                input#username.form-control(type='text', placeholder='用户名')
+                        .form-group
+                            .col-sm-12
+                                input#password.form-control(type='password', placeholder='密码')
+                        .form-group
+                            .col-sm-12
+                                button.btn.btn-success.login-btn(type='button') 登陆
