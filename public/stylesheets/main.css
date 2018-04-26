@@ -6982,6 +6982,9 @@ footer .right {
 .new-content{
   display: block;
   overflow: hidden;
+  -webkit-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 .new-content h4{
@@ -7042,6 +7045,7 @@ footer .right {
   position: fixed;
   right:0;
   top:40%;
+  z-index: 9000;
 }
 
 .icon {
@@ -7164,6 +7168,7 @@ footer .right {
 .new-content{
   border:1px solid #f9f6f6;
   cursor: pointer;
+  padding: 0 6px;
 }
 
 .new-image img{
@@ -7288,4 +7293,28 @@ footer .right {
 
 .clear-both{
   clear: both;
+}
+
+.swiper-pagination-bullet-active{
+  background: #69b417 !important;
+}
+
+.date:hover + .new-content{
+  background: #69b417;
+}
+
+.date:hover + .new-content a{
+  color:#FFF;
+}
+
+.new-content:hover{
+  background: #69b417;
+}
+
+.new-content:hover a{
+  color:#FFF;
+}
+
+.new-content:hover +.date {
+  background: #69b417;
 }

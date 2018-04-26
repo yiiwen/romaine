@@ -3,19 +3,39 @@ extends layout
 block content
   #wrapper
     include nav
-    section.hero-unit.hero-fullwidth.fullwidth-image.hero-rotating-words
-      .hero-content
-        .container
-          h2.heading
-            |油麦菜信息科技有限公司
-          p.lead
-            //- |Made
-            span#rotating-words.rotating-words
-              |创造爱 &amp; 激情, 快速创建你的项目, 节省你宝贵的时间
-          a.btn.btn-primary.btn-lg(href="#")
-            |联系我们
-          a.btn.btn-default.btn-lg(href="#")
-            |了解更多
+    section.swiper-container
+      .swiper-wrapper
+        .swiper-slide
+          .hero-unit.hero-fullwidth.fullwidth-image.hero-rotating-words
+            .hero-content
+              .container
+                h2.heading
+                  |油麦菜信息科技有限公司
+                a.btn.btn-primary.btn-lg(href="#")
+                  |联系我们
+                a.btn.btn-default.btn-lg(href="#")
+                  |了解更多
+        .swiper-slide
+          .hero-unit.hero-fullwidth.fullwidth-image.hero-rotating-words
+            .hero-content
+              .container
+                h2.heading
+                  |油麦菜信息科技有限公司
+                a.btn.btn-primary.btn-lg(href="#")
+                  |联系我们
+                a.btn.btn-default.btn-lg(href="#")
+                  |了解更多
+        .swiper-slide
+          .hero-unit.hero-fullwidth.fullwidth-image.hero-rotating-words
+            .hero-content
+              .container
+                h2.heading
+                  |油麦菜信息科技有限公司
+                a.btn.btn-primary.btn-lg(href="#")
+                  |联系我们
+                a.btn.btn-default.btn-lg(href="#")
+                  |了解更多
+      .swiper-pagination
     section.no-padding-bottom
       .container
         .row.icon-info-group
@@ -26,9 +46,6 @@ block content
                 |24小时技术支持
               p
                 |我们将为你提供24小时技术支持，解决你的后顾之忧
-              //- a.more(href="#")
-              //-   |Support Info
-              //- i.fa.fa-angle-right
           .col-md-4
             .icon-info.icon-info-center
               i.icon.icon_cloud-download_alt.ico-styled-md
@@ -36,9 +53,6 @@ block content
                 |网站安全保障
               p
                 |数据库安全备份 BUG检查修复。为你的网站保驾护航
-              //- a.more(href="#")
-              //-   |Getting an Update
-              //- i.fa.fa-angle-right
           .col-md-4
             .icon-info.icon-info-center
               i.icon.icon_question_alt2.ico-styled-md
@@ -46,9 +60,6 @@ block content
                 |优质客户服务
               p
                 |以客户需求为基础，以自身理念方向，成就客户，即是成就我们
-              //- a.more(href="#")
-              //-   |Ask a Question
-              //- i.fa.fa-angle-right
     section
       .container
         .row
@@ -71,79 +82,25 @@ block content
           |#{midTitle.title}
           p.intro
             |#{midTitle.detail}
-        .row
-          .col-md-4
-            .icon-info.icon-info-left
-              .case
-                img(src="/images/blog/blog-med-img4.jpg")
-                .txt-abs
-                  dl
-                    dt
-                      |广州油麦菜信息科技有限公司
-                    dd
-                      |-官网
-                    dd
-                      |-Date:2018.2
-          .col-md-4
-            .icon-info.icon-info-left
-              .case
-                img(src="/images/blog/blog-med-img4.jpg")
-                .txt-abs
-                  dl
-                    dt
-                      |广州油麦菜信息科技有限公司
-                    dd
-                      |-官网
-                    dd
-                      |-Date:2018.2  
-          .col-md-4
-            .icon-info.icon-info-left
-              .case
-                img(src="/images/blog/blog-med-img4.jpg")
-                .txt-abs
-                  dl
-                    dt
-                      |广州油麦菜信息科技有限公司
-                    dd
-                      |-官网
-                    dd
-                      |-Date:2018.2
-          .col-md-4
-            .icon-info.icon-info-left
-              .case
-                img(src="/images/blog/blog-med-img4.jpg")
-                .txt-abs
-                  dl
-                    dt
-                      |广州油麦菜信息科技有限公司
-                    dd
-                      |-官网
-                    dd
-                      |-Date:2018.2
-          .col-md-4
-            .icon-info.icon-info-left
-              .case
-                img(src="/images/blog/blog-med-img4.jpg")
-                .txt-abs
-                  dl
-                    dt
-                      |广州油麦菜信息科技有限公司
-                    dd
-                      |-官网
-                    dd
-                      |-Date:2018.2  
-          .col-md-4
-            .icon-info.icon-info-left
-              .case
-                img(src="/images/blog/blog-med-img4.jpg")
-                .txt-abs
-                  dl
-                    dt
-                      |广州油麦菜信息科技有限公司
-                    dd
-                      |-官网
-                    dd
-                      |-Date:2018.2
+        .row.index-cases
+          mixin case_block(proName,imgsrc,content,link) 
+            .col-md-4
+              .icon-info.icon-info-left
+                .case.port-1.effect-1
+                  .image-box
+                    img(src=imgsrc)
+                  .text-desc
+                    h3 #{proName}
+                    p
+                      |#{content}
+                    a.btn(href=link)
+                      |了解更多
+          +case_block('广州油麦菜信息科技有限公司',"/images/blog/blog-med-img4.jpg","广州油麦菜信息科技有限公司,广州油麦菜信息科技有限公司","#")
+          +case_block('广州油麦菜信息科技有限公司',"/images/blog/blog-med-img4.jpg","广州油麦菜信息科技有限公司,广州油麦菜信息科技有限公司","#")
+          +case_block('广州油麦菜信息科技有限公司',"/images/blog/blog-med-img4.jpg","广州油麦菜信息科技有限公司,广州油麦菜信息科技有限公司","#")
+          +case_block('广州油麦菜信息科技有限公司',"/images/blog/blog-med-img4.jpg","广州油麦菜信息科技有限公司,广州油麦菜信息科技有限公司","#")
+          +case_block('广州油麦菜信息科技有限公司',"/images/blog/blog-med-img4.jpg","广州油麦菜信息科技有限公司,广州油麦菜信息科技有限公司","#")
+          +case_block('广州油麦菜信息科技有限公司',"/images/blog/blog-med-img4.jpg","广州油麦菜信息科技有限公司,广州油麦菜信息科技有限公司","#")
     section.figure-show
         .container
           h2.txtcenter.section-heading
@@ -433,4 +390,24 @@ block content
           li
             a(href="#")
               img(src="images/clients/20170829174420692.jpg" alt="logo")
+
+      script(src="/javascripts/swiper.min.js")
+      script.
+        var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        autoplay:{
+          stopOnLastSlide:true
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        })
     include footer
