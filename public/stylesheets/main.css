@@ -6514,6 +6514,10 @@ html, body {
   background-image: url('../images/page-header-services-bg.jpg?1461311670');
 }
 
+#page-header-cases {
+  background-image: url('../images/page-header-default-bg.jpg?1461311670');
+}
+
 #page-header-contact {
   background-image: url('../images/page-header-contact-bg.jpg?1461312274');
 }
@@ -7185,7 +7189,7 @@ footer .right {
 }
 
 .new-title{
-  font-size: 1.1em;
+  font-size: 2.0em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
