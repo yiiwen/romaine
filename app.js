@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+var config = require('./libs/config');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -10,12 +11,8 @@ var newsRouter = require('./routes/news');
 var infoRouter = require('./routes/info');
 var caseRouter = require('./routes/cases');
 
-/////////////////////后台模块/////////////
-var backendRouter = require('./routes/backend/app');
-
 var app = express();
-app.locals.title = '油麦菜信息科技有限公司';
-// view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -31,16 +28,12 @@ app.use('/news',newsRouter);
 app.use('/info',infoRouter);
 app.use('/cases',caseRouter);
 
-//后台模块
-app.use('/backend',backendRouter);
-
 app.use(function(req, res, next) {
-  res.render("404",{title:"广州油麦菜信息科技有限公司"});
+  res.render("404",{title:title});
 });
 
-// error handler
+
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 

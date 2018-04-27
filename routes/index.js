@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var redis = require('redis');
 
 var title = '广州油麦菜信息科技有限公司'
 
@@ -99,5 +100,14 @@ router.get('/index',function(req,res,next){
 router.get('/homeblog',function(req,res,next){
   res.render('homeBlog',{title:title});
 })
+
+router.get('/redis',function(req,res,next){
+  const client = redis.createClient("6379","59.110.216.211");
+  client.auth("weiki4You");
+  client.on("error",function(error){
+    console.log(error);
+  })
+  res.send("Hello World");
+});
 
 module.exports = router;
