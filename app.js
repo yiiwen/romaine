@@ -1,9 +1,9 @@
 var createError = require('http-errors');
-var config = require('./libs/config');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const db = require('./libs/mysql.util.js');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -12,6 +12,13 @@ var infoRouter = require('./routes/info');
 var caseRouter = require('./routes/cases');
 
 var app = express();
+
+const connection = db.createConnection();
+connection.query('select * from nav',function(error,results,fields){
+  if (error)
+    throw error
+  console.log(results);
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
