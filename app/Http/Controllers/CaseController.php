@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class CaseController extends Controller
 {
     public function index() {
-        return view('cases.index');
+        return static_view('cases.index');
     }
 }

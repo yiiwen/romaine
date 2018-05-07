@@ -988,7 +988,7 @@ if (! function_exists('view')) {
      * @param  array   $mergeData
      * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
      */
-    function view_old($view = null, $data = [], $mergeData = [])
+    function view($view = null, $data = [], $mergeData = [])
     {
         $factory = app(ViewFactory::class);
 
@@ -998,10 +998,39 @@ if (! function_exists('view')) {
 
         return $factory->make($view, $data, $mergeData);
     }
+}
 
-    function view($view = null, $data = [], $mergeData = []) {
-        //先是判断是否存在静态文件
-        $handle = view_old($view, $data, $mergeData);
+if (! function_exists('static_view')) {
+    /**
+     * Get the evaluated static view contents for the given view.
+     *
+     * @param string $view
+     * @param array $data
+     * @param array $mergeData
+     * @return \Illuminate\Foundation\Application|mixed
+     */
+
+    function static_view($view = null, $data = [], $mergeData = []) {
+
+        $static_view_path = config('view.static_paths');
+        $view_file = md5($view).'.html';
+
+        if ($static_view_path){
+            if (file_exists($static_view_path . DIRECTORY_SEPARATOR . $view_file)) {
+                return file_get_contents($static_view_path . DIRECTORY_SEPARATOR . $view_file);
+            }
+        }
+        if (!$static_view_path){
+            mkdir(storage_path('framework') . DIRECTORY_SEPARATOR . 'html','0777');
+        }
+
+        $factory = app(ViewFactory::class);
+        if (func_num_args() === 0) {
+            $handle = $factory;
+        } else {
+            $handle = $factory->make($view, $data, $mergeData);
+        }
+        file_put_contents($static_view_path . DIRECTORY_SEPARATOR . $view_file,$handle->__toString());
         return $handle;
     }
 }

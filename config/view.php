@@ -18,6 +18,13 @@ return [
     ],
 
     /*
+     *
+     * Static View Storage Paths
+     *
+     */
+    'static_paths' => realpath(storage_path('framework/html')),
+
+    /*
     |--------------------------------------------------------------------------
     | Compiled View Path
     |--------------------------------------------------------------------------
