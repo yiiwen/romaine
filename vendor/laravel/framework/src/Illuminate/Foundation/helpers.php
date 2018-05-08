@@ -1014,7 +1014,6 @@ if (! function_exists('static_view')) {
 
         $static_view_path = config('view.static_paths');
         $view_file = md5($view).'.html';
-
         if ($static_view_path){
             if (file_exists($static_view_path . DIRECTORY_SEPARATOR . $view_file)) {
                 return file_get_contents($static_view_path . DIRECTORY_SEPARATOR . $view_file);
@@ -1023,7 +1022,6 @@ if (! function_exists('static_view')) {
         if (!$static_view_path){
             mkdir(storage_path('framework') . DIRECTORY_SEPARATOR . 'html','0777');
         }
-
         $factory = app(ViewFactory::class);
         if (func_num_args() === 0) {
             $handle = $factory;
